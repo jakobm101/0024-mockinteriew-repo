@@ -142,25 +142,13 @@ const mixedArray = [
 function sum(array) {
   // TODO:
   // for strings use the length of the string,
-  //  for booleans use 1 and 0
-  //  for number ...
-  //convert strings to numbers
-  // convert bool to number
   // add it all up
-  // return
-  // log
-  let sum = 0;
-  for (let item of array) {
-    if (typeof item === 'string') item = item.length
-    // console.log("item", item);
-    sum += item
-  }
-  return sum 
+  return array
+    .map((item) => (typeof item === "string" ? item.length : item))
+    .reduce((prev, curr) => prev + curr);
 }
 
-console.log("testing sum function. expecting 9: ",sum(['four', 4, true, false]));
-
-console.log(sum(mixedArray));
+console.log(`Sum result: `, sum(mixedArray));
 
 // Bonus: Write a function that calculates the greatest product of four
 // numbers that is either horizontally or vertically in the array
