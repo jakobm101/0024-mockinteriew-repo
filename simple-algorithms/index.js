@@ -13,7 +13,7 @@ function findLongestWord(words) {
     prev.length > current.length ? prev : current
   );
 }
-console.log("findLongestWord result: ",findLongestWord(words));
+console.log("findLongestWord result: ", findLongestWord(words));
 
 // Calculate the sum
 
@@ -21,7 +21,10 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(numbers) {
   // TODO:
+  // return reduce add current to previous
+  return numbers.reduce((prev, curr) => prev + curr);
 }
+console.log('result of numbers: ',sumNumbers(numbers));
 
 // Calculate the average length of the words
 
