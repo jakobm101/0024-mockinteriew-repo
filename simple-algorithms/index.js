@@ -248,24 +248,15 @@ function greatestProduct(matrix) {
   // [5][3] + [6][3] + [7][3]
   ////////
 
-  // ROW SUMS
-  let rowSums = [];
-  matrix.forEach((element) => {
-    rowSums.push(element.reduce((prev, curr) => prev + curr));
-  });
-
   let rowFourNumberSums = [];
+  let colFourNumberSums = [];
 
-  //// COLUMN SUMS
-  let columnSums = [];
-  // initialize the length of the array
-  matrix.forEach(() => columnSums.push(0));
   // iterate through the whole matrix
   for (let yPos = 0; yPos <= matrix.length - 1; yPos++) {
     for (let xPos = 0; xPos <= matrix[yPos].length - 1; xPos++) {
-      // sum up the numbers in column x
-      columnSums[xPos] += matrix[yPos][xPos];
-      // add four number pair values to array
+      
+      // X AXIS
+      //  add four number pair values to array
       if (matrix[yPos][xPos + 3]) {
         let quartet = 0;
         for (index = 0; index < 4; index++) {
@@ -273,28 +264,28 @@ function greatestProduct(matrix) {
         }
         rowFourNumberSums.push(quartet);
       }
-      console.log({ rowFourNumberSums });
+
+      // Y AXIS
+      //  add four number pair values to array
+      if (matrix[yPos + 3]) {
+        let quartetY = 0;
+        for (index = 0; index < 4; index++) {
+          quartetY += matrix[yPos + index][xPos];
+        }
+        colFourNumberSums.push(quartetY);
+      }
     }
   }
 
-  // console.log({ rowSums });
-  // console.log({ columnSums });
 
-  //// COMPARE ROW AND COLUMN
-  let rowMax = rowSums.reduce((prev, current) =>
-    prev > current ? prev : current
-  );
-  let colMax = columnSums.reduce((prev, current) =>
-    prev > current ? prev : current
-  );
-  let biggestSum = rowMax > colMax ? rowMax : colMax;
-  // console.log({ biggestSum });
-
-  // console.log(`The greatest is: ${biggestSum}`);
 }
+
 const testMatrix = [
   [1, 2, 3, 4, 5, 6],
   [4, 5, 6, 7, 8, 9],
+  [1, 2, 3, 4, 5, 6],
+  [4, 5, 6, 7, 8, 9],
+  [1, 2, 3, 4, 5, 1],
   [1, 2, 3, 4, 5, 1],
 ];
 console.log(`\n\n\n`);
