@@ -24,7 +24,7 @@ function sumNumbers(numbers) {
   // return reduce add current to previous
   return numbers.reduce((prev, curr) => prev + curr);
 }
-console.log('result of numbers: ',sumNumbers(numbers));
+console.log("result of numbers: ", sumNumbers(numbers));
 
 // Calculate the average length of the words
 
@@ -42,8 +42,15 @@ const words2 = [
 ];
 
 function averageWordLength(words) {
-  // TODO:
+  const numberOfWords = words.length;
+  const allCharsCombined = words.reduce(
+    (prev, current) => prev + current
+  ).length;
+
+  return allCharsCombined / numberOfWords;
 }
+console.log('averageWordLength result: ',averageWordLength(words2));
+
 
 // Unique arrays - return an array without duplicates
 
