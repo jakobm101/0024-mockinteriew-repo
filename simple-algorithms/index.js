@@ -275,8 +275,6 @@ function greatestProduct(matrix) {
   return fourNumberSums.reduce((prev, curr) => (prev > curr ? prev : curr));
 }
 
-console.log(greatestProduct(testMatrix));
-
 module.exports = {
   maxOfTwoNumbers,
   findLongestWord,
