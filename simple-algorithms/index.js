@@ -116,7 +116,14 @@ const wordsCount = [
 
 function howManyTimes(haystack, needle) {
   // TODO:
+  // number of occurences of needle in haystack
+  // filter
+  // length
+  return haystack.filter((item) => item === needle).length;
 }
+// console.log(wordsCount.filter((item) => item === wordsCount[1]).length);
+console.log('howManyTimes result: ', howManyTimes(wordsCount, wordsCount[1]));
+
 
 // Bonus: A generic sum function
 // for strings use the length of the string, for booleans use 1 and 0
