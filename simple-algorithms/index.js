@@ -8,8 +8,8 @@ function maxOfTwoNumbers(num1, num2) {
 
 const words = ["Jaws", "Up", "Alien", "Gravity", "Inception", "Psycho"];
 
-function findLongestWord(words) {
-
+function findLongestWord(words = []) {
+  if(words.length === 0) return null;
   return words.reduce((prev, current) =>
     prev.length > current.length ? prev : current
   );
@@ -26,6 +26,8 @@ function sumNumbers(numbers) {
   return numbers.reduce((prev, curr) => prev + curr);
 }
 console.log("result of numbers: ", sumNumbers(numbers));
+const testSum = [10, 23];
+console.log("result of numbers: ", sumNumbers(testSum));
 
 // Calculate the average length of the words
 
@@ -42,15 +44,19 @@ const words2 = [
   "mystique",
 ];
 
-function averageWordLength(words) {
+function averageWordLength(words = []) {
   const numberOfWords = words.length;
+  if (!numberOfWords) return 0;
   const allCharsCombined = words.reduce(
     (prev, current) => prev + current
   ).length;
 
   return allCharsCombined / numberOfWords;
 }
+
 console.log("averageWordLength result: ", averageWordLength(words2));
+const testWords = ["4444", "4444", "4444", "22", "22", "22"];
+console.log("averageWordLength result: ", averageWordLength(testWords));
 
 // Unique arrays - return an array without duplicates
 
@@ -251,7 +257,6 @@ function greatestProduct(matrix) {
   // iterate through the whole matrix
   for (let yPos = 0; yPos <= matrix.length - 1; yPos++) {
     for (let xPos = 0; xPos <= matrix[yPos].length - 1; xPos++) {
-
       // X AXIS
       //  add four number pair values to array
       if (matrix[yPos][xPos + 3]) {
@@ -274,11 +279,10 @@ function greatestProduct(matrix) {
     }
   }
   console.log(fourNumberSums);
-  
+
   return fourNumberSums.reduce((prev, curr) => (prev > curr ? prev : curr));
 }
-console.log(`MATRIX MULTIPLY `,greatestProduct(matrix));
-
+console.log(`MATRIX MULTIPLY `, greatestProduct(matrix));
 
 module.exports = {
   maxOfTwoNumbers,
