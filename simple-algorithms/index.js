@@ -9,6 +9,7 @@ function maxOfTwoNumbers(num1, num2) {
 const words = ["Jaws", "Up", "Alien", "Gravity", "Inception", "Psycho"];
 
 function findLongestWord(words) {
+
   return words.reduce((prev, current) =>
     prev.length > current.length ? prev : current
   );
@@ -256,7 +257,7 @@ function greatestProduct(matrix) {
       if (matrix[yPos][xPos + 3]) {
         let quartet = 0;
         for (index = 0; index < 4; index++) {
-          quartet += matrix[yPos][xPos + index];
+          quartet *= matrix[yPos][xPos + index];
         }
         fourNumberSums.push(quartet);
       }
@@ -266,7 +267,7 @@ function greatestProduct(matrix) {
       if (matrix[yPos + 3]) {
         let quartetY = 0;
         for (index = 0; index < 4; index++) {
-          quartetY += matrix[yPos + index][xPos];
+          quartetY *= matrix[yPos + index][xPos];
         }
         fourNumberSums.push(quartetY);
       }
