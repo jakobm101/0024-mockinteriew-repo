@@ -122,8 +122,7 @@ function howManyTimes(haystack, needle) {
   return haystack.filter((item) => item === needle).length;
 }
 // console.log(wordsCount.filter((item) => item === wordsCount[1]).length);
-console.log('howManyTimes result: ', howManyTimes(wordsCount, wordsCount[1]));
-
+console.log("howManyTimes result: ", howManyTimes(wordsCount, wordsCount[1]));
 
 // Bonus: A generic sum function
 // for strings use the length of the string, for booleans use 1 and 0
@@ -142,7 +141,26 @@ const mixedArray = [
 
 function sum(array) {
   // TODO:
+  // for strings use the length of the string,
+  //  for booleans use 1 and 0
+  //  for number ...
+  //convert strings to numbers
+  // convert bool to number
+  // add it all up
+  // return
+  // log
+  let sum = 0;
+  for (let item of array) {
+    if (typeof item === 'string') item = item.length
+    // console.log("item", item);
+    sum += item
+  }
+  return sum 
 }
+
+console.log("testing sum function. expecting 9: ",sum(['four', 4, true, false]));
+
+console.log(sum(mixedArray));
 
 // Bonus: Write a function that calculates the greatest product of four
 // numbers that is either horizontally or vertically in the array
