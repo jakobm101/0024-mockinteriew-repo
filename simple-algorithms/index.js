@@ -275,15 +275,6 @@ function greatestProduct(matrix) {
   return fourNumberSums.reduce((prev, curr) => (prev > curr ? prev : curr));
 }
 
-const testMatrix = [
-  [1, 2, 3, 4, 5, 6],
-  [4, 5, 6, 7, 8, 9],
-  [1, 2, 3, 4, 11, 6],
-  [4, 5, 6, 7, 11, 9],
-  [1, 2, 3, 4, 11, 1],
-  [1, 2, 3, 4, 11, 1],
-];
-console.log(`\n\n\n`);
 console.log(greatestProduct(testMatrix));
 
 module.exports = {
