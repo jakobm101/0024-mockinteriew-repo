@@ -258,6 +258,7 @@ function greatestProduct(matrix) {
   // iterate through the whole matrix
   for (let yPos = 0; yPos <= matrix.length - 1; yPos++) {
     for (let xPos = 0; xPos <= matrix[yPos].length - 1; xPos++) {
+      
       // X AXIS
       //  add four number pair values to array
       if (matrix[yPos][xPos + 3]) {
