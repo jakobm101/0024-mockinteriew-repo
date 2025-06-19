@@ -23,7 +23,7 @@ const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 function sumNumbers(numbers = []) {
   // TODO:
   // return reduce add current to previous
-  if (numbers.length = 0) return null;
+  if (numbers.length === 0) return null;
   return numbers.reduce((prev, curr) => prev + curr);
 }
 console.log("result of numbers: ", sumNumbers(numbers));
