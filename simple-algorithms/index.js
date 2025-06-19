@@ -9,25 +9,11 @@ function maxOfTwoNumbers(num1, num2) {
 const words = ["Jaws", "Up", "Alien", "Gravity", "Inception", "Psycho"];
 
 function findLongestWord(words) {
-  // TODO:
-  // var longest = words[0]
-  // Sanity check: log longest
-  // compare the longest to next word in array
-  // replace longest if next is longer
-  // return
-  // call the function
-  // log output
-  let longest = words[0];
-  for (let word of words) {
-    word.length > longest.length ? (longest = word) : 0;
-  }
-  // return longest;
-  return words.reduce((prev, current)=>{
-    console.log({prev,current}); 
-    return prev.length>current.length?prev:current;
-   })
+  return words.reduce((prev, current) =>
+    prev.length > current.length ? prev : current
+  );
 }
-console.log(findLongestWord(words));
+console.log("findLongestWord result: ",findLongestWord(words));
 
 // Calculate the sum
 
