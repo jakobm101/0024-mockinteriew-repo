@@ -47,7 +47,7 @@ const words2 = [
 
 function averageWordLength(words = []) {
   const numberOfWords = words.length;
-  if (!numberOfWords) return 0;
+  if (!numberOfWords) return null;
   const allCharsCombined = words.reduce(
     (prev, current) => prev + current
   ).length;
