@@ -255,7 +255,7 @@ function greatestProduct(matrix) {
       // X AXIS
       //  add four number pair values to array
       if (matrix[yPos][xPos + 3]) {
-        let quartet = 0;
+        let quartet = 1;
         for (index = 0; index < 4; index++) {
           quartet *= matrix[yPos][xPos + index];
         }
@@ -265,7 +265,7 @@ function greatestProduct(matrix) {
       // Y AXIS
       //  add four number pair values to array
       if (matrix[yPos + 3]) {
-        let quartetY = 0;
+        let quartetY = 1;
         for (index = 0; index < 4; index++) {
           quartetY *= matrix[yPos + index][xPos];
         }
@@ -273,8 +273,12 @@ function greatestProduct(matrix) {
       }
     }
   }
+  console.log(fourNumberSums);
+  
   return fourNumberSums.reduce((prev, curr) => (prev > curr ? prev : curr));
 }
+console.log(`MATRIX MULTIPLY `,greatestProduct(matrix));
+
 
 module.exports = {
   maxOfTwoNumbers,
