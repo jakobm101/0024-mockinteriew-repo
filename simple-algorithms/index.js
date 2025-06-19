@@ -9,7 +9,7 @@ function maxOfTwoNumbers(num1, num2) {
 const words = ["Jaws", "Up", "Alien", "Gravity", "Inception", "Psycho"];
 
 function findLongestWord(words = []) {
-  if(words.length === 0) return null;
+  if (words.length === 0) return null;
   return words.reduce((prev, current) =>
     prev.length > current.length ? prev : current
   );
@@ -20,9 +20,10 @@ console.log("findLongestWord result: ", findLongestWord(words));
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers(numbers) {
+function sumNumbers(numbers = []) {
   // TODO:
   // return reduce add current to previous
+  if (numbers.length = 0) return null;
   return numbers.reduce((prev, curr) => prev + curr);
 }
 console.log("result of numbers: ", sumNumbers(numbers));
