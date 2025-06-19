@@ -1,7 +1,14 @@
 // Find the maximum
 function maxOfTwoNumbers(num1, num2) {
-  // TODO:  
+  // TODO: 
+  // compare which is bigger
+  // return the bigger one
+  return (num1>num2)? num1:num2 
+  // call function for test
 }
+console.log(maxOfTwoNumbers(1,2));
+console.log(maxOfTwoNumbers(3452345,-2352346));
+
 
 
 // Find the longest word
