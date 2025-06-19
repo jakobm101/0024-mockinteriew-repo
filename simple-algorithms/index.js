@@ -49,8 +49,7 @@ function averageWordLength(words) {
 
   return allCharsCombined / numberOfWords;
 }
-console.log('averageWordLength result: ',averageWordLength(words2));
-
+console.log("averageWordLength result: ", averageWordLength(words2));
 
 // Unique arrays - return an array without duplicates
 
@@ -70,7 +69,11 @@ const words3 = [
 
 function uniquifyArray(words) {
   // TODO:
+  // turn it into a set
+  // turn it back to array
+  return new Array(...new Set(words));
 }
+console.log("uniquifyArray result", uniquifyArray(words3));
 
 // Find elements
 const wordsFind = [
@@ -86,7 +89,14 @@ const wordsFind = [
 
 function doesWordExist(haystack, needle) {
   // TODO:
+  // filter haystack
+  // if needle true return true
+  return haystack.find((item) => item === needle) ? true : false;
 }
+console.log(
+  "🐶 doesWordExist result: ",
+  doesWordExist(wordsFind, wordsFind[2])
+);
 
 // Count repetition
 
