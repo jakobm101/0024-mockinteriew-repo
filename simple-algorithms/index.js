@@ -243,18 +243,14 @@ function greatestProduct(matrix) {
   // // // reduce array
 
   // part 2 create function to sum four numbers on yAxis
-  // // figure out how to sum coordinates
-  // [0][0] + [1][0] + [3][0]
-  // [5][3] + [6][3] + [7][3]
   ////////
 
-  let rowFourNumberSums = [];
-  let colFourNumberSums = [];
+  let fourNumberSums = [];
 
   // iterate through the whole matrix
   for (let yPos = 0; yPos <= matrix.length - 1; yPos++) {
     for (let xPos = 0; xPos <= matrix[yPos].length - 1; xPos++) {
-      
+
       // X AXIS
       //  add four number pair values to array
       if (matrix[yPos][xPos + 3]) {
@@ -262,7 +258,7 @@ function greatestProduct(matrix) {
         for (index = 0; index < 4; index++) {
           quartet += matrix[yPos][xPos + index];
         }
-        rowFourNumberSums.push(quartet);
+        fourNumberSums.push(quartet);
       }
 
       // Y AXIS
@@ -272,21 +268,20 @@ function greatestProduct(matrix) {
         for (index = 0; index < 4; index++) {
           quartetY += matrix[yPos + index][xPos];
         }
-        colFourNumberSums.push(quartetY);
+        fourNumberSums.push(quartetY);
       }
     }
   }
-
-
+  return fourNumberSums.reduce((prev, curr) => (prev > curr ? prev : curr));
 }
 
 const testMatrix = [
   [1, 2, 3, 4, 5, 6],
   [4, 5, 6, 7, 8, 9],
-  [1, 2, 3, 4, 5, 6],
-  [4, 5, 6, 7, 8, 9],
-  [1, 2, 3, 4, 5, 1],
-  [1, 2, 3, 4, 5, 1],
+  [1, 2, 3, 4, 11, 6],
+  [4, 5, 6, 7, 11, 9],
+  [1, 2, 3, 4, 11, 1],
+  [1, 2, 3, 4, 11, 1],
 ];
 console.log(`\n\n\n`);
 console.log(greatestProduct(testMatrix));
